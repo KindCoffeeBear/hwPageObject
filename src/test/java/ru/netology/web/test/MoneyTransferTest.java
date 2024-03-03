@@ -61,7 +61,7 @@ public class MoneyTransferTest {
     void shouldGetErrorMassageIfAmountMoreBalance() {
         var amount = DataHelper.generateInvalidAmount(secondCardBalance);
         var replenishmentPage = dashboardPage.selectCardToReplenishment(firstCardInfo.getId());
-        replenishmentPage.makeValidReplenishment(String.valueOf(amount), secondCardInfo);
+        replenishmentPage.makeReplenishment(String.valueOf(amount), secondCardInfo);
         replenishmentPage.findErrorMessage("Ошибка! На балансе недостаточно средств");
         var actualBalanceFirstCard = dashboardPage.getCardBalance(firstCardInfo.getId());
         var actualBalanceSecondCard = dashboardPage.getCardBalance(secondCardInfo.getId());

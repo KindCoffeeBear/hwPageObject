@@ -20,10 +20,14 @@ public class ReplenishmentPage {
     }
 
     public DashboardPage makeValidReplenishment(String amountToReplenishment, DataHelper.CardInfo cardInfo) {
+        makeReplenishment(amountToReplenishment, cardInfo);
+        return new DashboardPage();
+    }
+
+    public void makeReplenishment(String amountToReplenishment, DataHelper.CardInfo cardInfo) {
         amountField.setValue(amountToReplenishment);
         fromField.setValue(cardInfo.getCardNumber());
         replenishmentButton.click();
-        return new DashboardPage();
     }
 
 
